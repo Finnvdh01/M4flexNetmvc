@@ -1,0 +1,23 @@
+[
+    {
+        "Title": "JSON Dit bericht is nieuws",
+        "Content": "JSON Lijstjes ook met newsitems",
+        "ImageUrl": "img/newsitem.png"
+    },
+    {
+        "Title": "JSON Mijn eerste model",
+        "Content": "JSON Was niet zo moeilijk om te maken",
+        "ImageUrl": "img/newsitem.png"
+    }
+    ,
+    {
+        "Title": "JSON Mijn tweede model",
+        "Content": "JSON Dit is een tweede model",
+        "ImageUrl": "img/newsitem.png"
+    },
+    {
+        "Title": "JSON Mijn derde model",
+        "Content": "JSON Dit is een derde model",
+        "ImageUrl": "img/newsitem.png"
+    }
+]

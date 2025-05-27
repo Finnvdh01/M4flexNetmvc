@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using newssite.Models;
+using System.Text.Json;
 
 namespace newssite.Controllers;
 
@@ -11,34 +12,8 @@ public class HomeController : Controller
 
     public HomeController(ILogger<HomeController> logger)
     {
-        _logger = logger;
-        newsItems.Add(new NewsItem()
-        {
-            Title = "mijn eerste model",
-            Content = "was niet zo moeilijk om te maken.",
-            imageUrl = "img/newsitem.png"
-        });
-
-        newsItems.Add(new NewsItem()
-        {
-            Title = "mijn tweede model",
-            Content = "was ook niet zo moeilijk om te maken.",
-            imageUrl = "img/newsitem.png"
-        });
-
-        newsItems.Add(new NewsItem()
-        {
-            Title = "mijn derde model",
-            Content = "was ook niet zo moeilijk om te maken.",
-            imageUrl = "img/newsitem.png"
-        });
-
-        newsItems.Add(new NewsItem()
-        {
-            Title = "mijn vierde model",
-            Content = "was ook niet zo moeilijk om te maken.",
-            imageUrl = "img/newsitem.png"
-        });
+     string json = System.IO.File.ReadAllText("data/news.json");
+        newsItems = JsonSerializer.Deserialize<List<NewsItem>>(json);
     }
 
     public IActionResult Index()
@@ -57,3 +32,4 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
+
