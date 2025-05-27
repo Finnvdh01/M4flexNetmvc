@@ -1,0 +1,6 @@
+@M4flexNetmvc_HostAddress = http://localhost:5067
+
+GET {{M4flexNetmvc_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
