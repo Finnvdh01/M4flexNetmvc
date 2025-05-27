@@ -6,6 +6,15 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<img src="@Model.imageUrl" alt="">
- <section>@Model.Title</section>
-<section>@Model.Content</section>
+
+@{
+
+    foreach(NewsItem item in Model)
+    {
+        <div class="news-item">
+            <h2>@item.Title</h2>
+            <p>@item.Content</p>
+            <img src="@item.imageUrl" alt="@item.Title" />
+        </div>
+    }
+}
